@@ -1,0 +1,207 @@
+"""
+Create comprehensive sample data for testing the AI stylist
+"""
+import json
+
+def create_sample_catalog():
+    """Create a comprehensive sample catalog with various fashion items"""
+    
+    sample_products = [
+        # Alo Yoga Products
+        {
+            "name": "Airlift High-Waist Legging",
+            "brand": "Alo Yoga",
+            "price": "$88",
+            "description": "Designed for movement and studio flow, with moisture-wicking, ultra-smooth fabric.",
+            "image_url": "https://cdn.shopify.com/s/files/1/1464/5034/products/W5477R_001.jpg",
+            "category": "Leggings",
+            "color": "Black",
+            "size": "XS-XL",
+            "material": "Nylon, Spandex"
+        },
+        {
+            "name": "Shine Long Sleeve",
+            "brand": "Alo Yoga",
+            "price": "$68",
+            "description": "Buttery-soft fabric with a relaxed fit perfect for layering.",
+            "image_url": "https://cdn.shopify.com/s/files/1/1464/5034/products/W3057R_100.jpg",
+            "category": "Tops",
+            "color": "White",
+            "size": "XS-XL",
+            "material": "Modal, Spandex"
+        },
+        {
+            "name": "7/8 High-Waist Legging",
+            "brand": "Alo Yoga",
+            "price": "$78",
+            "description": "High-waisted legging with 7/8 length, perfect for yoga and everyday wear.",
+            "image_url": "https://cdn.shopify.com/s/files/1/1464/5034/products/W5435R_309.jpg",
+            "category": "Leggings",
+            "color": "Sage",
+            "size": "XS-XL",
+            "material": "Nylon, Spandex"
+        },
+        
+        # Lululemon Products
+        {
+            "name": "Align Tank Top",
+            "brand": "Lululemon",
+            "price": "$58",
+            "description": "Buttery-soft Nulu fabric with built-in bra for light support.",
+            "image_url": "https://images.lululemon.com/is/image/lululemon/LW1COWS_028655_1",
+            "category": "Tops",
+            "color": "White",
+            "size": "2-14",
+            "material": "Nulu"
+        },
+        {
+            "name": "Wunder Train High-Rise Tight",
+            "brand": "Lululemon",
+            "price": "$98",
+            "description": "High-rise tight with Everlux fabric for training and running.",
+            "image_url": "https://images.lululemon.com/is/image/lululemon/LW5CQWS_0001_1",
+            "category": "Leggings",
+            "color": "Black",
+            "size": "2-14",
+            "material": "Everlux"
+        },
+        {
+            "name": "Everywhere Belt Bag",
+            "brand": "Lululemon",
+            "price": "$38",
+            "description": "Hands-free storage for your essentials with adjustable strap.",
+            "image_url": "https://images.lululemon.com/is/image/lululemon/LU9A09S_0001_1",
+            "category": "Accessories",
+            "color": "Black",
+            "size": "One Size",
+            "material": "Nylon"
+        },
+        {
+            "name": "Scuba Oversized Half-Zip Hoodie",
+            "brand": "Lululemon",
+            "price": "$118",
+            "description": "Oversized hoodie with half-zip design, perfect for layering.",
+            "image_url": "https://images.lululemon.com/is/image/lululemon/LW3DKWS_047748_1",
+            "category": "Outerwear",
+            "color": "Heathered Core Ultra Light Grey",
+            "size": "XS/S-XL/XXL",
+            "material": "Cotton, Polyester"
+        },
+        
+        # Athleta Products
+        {
+            "name": "Salutation Tight",
+            "brand": "Athleta",
+            "price": "$89",
+            "description": "High-waisted tight with four-way stretch for yoga and barre.",
+            "image_url": "https://athleta.gap.com/webcontent/0019/455/698/cn19455698.jpg",
+            "category": "Leggings",
+            "color": "Black",
+            "size": "XXS-3X",
+            "material": "Powervita"
+        },
+        {
+            "name": "Conscious Crop Tank",
+            "brand": "Athleta",
+            "price": "$54",
+            "description": "Cropped tank made from recycled polyester with built-in bra.",
+            "image_url": "https://athleta.gap.com/webcontent/0020/123/456/cn20123456.jpg",
+            "category": "Tops",
+            "color": "Navy",
+            "size": "XXS-3X",
+            "material": "Recycled Polyester"
+        },
+        
+        # Nike Products
+        {
+            "name": "Air Force 1 '07",
+            "brand": "Nike",
+            "price": "$90",
+            "description": "Classic basketball shoe with leather upper and Air-Sole unit.",
+            "image_url": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-WrLlWX.png",
+            "category": "Shoes",
+            "color": "White",
+            "size": "5-12",
+            "material": "Leather"
+        },
+        {
+            "name": "Dri-FIT One Luxe Leggings",
+            "brand": "Nike",
+            "price": "$75",
+            "description": "High-waisted leggings with Dri-FIT technology and side pockets.",
+            "image_url": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/i1-6c7d3dcf-8eea-43b8-b7c5-6e9f8c5c5c5c/dri-fit-one-luxe-leggings-1X8qGJ.png",
+            "category": "Leggings",
+            "color": "Black",
+            "size": "XS-3X",
+            "material": "Polyester, Spandex"
+        },
+        
+        # Outdoor Voices Products
+        {
+            "name": "Exercise Dress",
+            "brand": "Outdoor Voices",
+            "price": "$75",
+            "description": "Versatile dress for workouts and everyday wear with built-in shorts.",
+            "image_url": "https://cdn.shopify.com/s/files/1/0069/8893/products/ExerciseDress_Black_Front.jpg",
+            "category": "Dresses",
+            "color": "Black",
+            "size": "XXS-XXL",
+            "material": "Textured Compression"
+        },
+        {
+            "name": "CloudKnit Tee",
+            "brand": "Outdoor Voices",
+            "price": "$45",
+            "description": "Ultra-soft tee made from CloudKnit fabric for all-day comfort.",
+            "image_url": "https://cdn.shopify.com/s/files/1/0069/8893/products/CloudKnitTee_White_Front.jpg",
+            "category": "Tops",
+            "color": "White",
+            "size": "XXS-XXL",
+            "material": "CloudKnit"
+        },
+        
+        # Accessories and extras
+        {
+            "name": "Yoga Mat",
+            "brand": "Manduka",
+            "price": "$68",
+            "description": "High-performance yoga mat with superior grip and cushioning.",
+            "image_url": "https://cdn.shopify.com/s/files/1/0069/8893/products/YogaMat_Purple.jpg",
+            "category": "Accessories",
+            "color": "Purple",
+            "size": "68\" x 24\"",
+            "material": "Natural Rubber"
+        },
+        {
+            "name": "Water Bottle",
+            "brand": "Hydro Flask",
+            "price": "$35",
+            "description": "Insulated stainless steel water bottle keeps drinks cold for 24 hours.",
+            "image_url": "https://cdn.shopify.com/s/files/1/0069/8893/products/WaterBottle_Pink.jpg",
+            "category": "Accessories",
+            "color": "Pink",
+            "size": "32 oz",
+            "material": "Stainless Steel"
+        },
+        {
+            "name": "Sports Bra",
+            "brand": "Alo Yoga",
+            "price": "$52",
+            "description": "Medium support sports bra with removable padding and racerback design.",
+            "image_url": "https://cdn.shopify.com/s/files/1/1464/5034/products/W5477R_001.jpg",
+            "category": "Tops",
+            "color": "Black",
+            "size": "XS-XL",
+            "material": "Nylon, Spandex"
+        }
+    ]
+    
+    # Save to JSON file
+    with open('catalog.json', 'w', encoding='utf-8') as f:
+        json.dump(sample_products, f, indent=2, ensure_ascii=False)
+    
+    print(f"✅ Created sample catalog with {len(sample_products)} products")
+    return sample_products
+
+if __name__ == "__main__":
+    create_sample_catalog()

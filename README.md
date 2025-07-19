@@ -1,12 +1,13 @@
-# 👗 AI Fashion Stylist (GPT-4 + CLIP + Streamlit)
+# 👗 AI Fashion Stylist (GPT-4 + Streamlit)
 
-An intelligent virtual stylist that recommends fashion items based on **user preferences**, **style**, and **occasion** using **GPT-4** and optionally **CLIP-based image search**.
+An intelligent virtual stylist that recommends fashion items based on **user preferences**, **style**, and **occasion** using **GPT-4** for intelligent product tagging and recommendations.
 
-This project simulates a virtual fashion assistant for e-commerce or personal styling. It can:
-- Scrape product catalogs from athleisure brands like Alo Yoga, Lululemon, etc.
-- Use GPT-4 to enrich items with style and occasion tags
-- Recommend outfits based on user inputs via a simple Streamlit interface
-- (Optional) Accept an image and return similar products using CLIP image embeddings
+This project creates a virtual fashion assistant that can:
+- Import product catalogs from Google Sheets or CSV files
+- Use GPT-4 to enrich items with intelligent style and occasion tags
+- Recommend outfits based on user inputs via an intuitive Streamlit interface
+- Provide personalized AI styling advice
+- Create complete outfit combinations
 
 ---
 
@@ -52,24 +53,83 @@ ai_stylist_project/
 ## ⚙️ Setup Instructions
 
 ### 1. Clone the repo
-git clone https://github.com/yourname/ai-stylist.git
-cd ai-stylist
+```bash
+git clone https://github.com/plengchanok/ai_stylist.git
+cd ai_stylist
+```
 
 ### 2. Install dependencies
+```bash
 pip install -r requirements.txt
+```
 
 ### 3. Set up environment
 Create a .env file with your OpenAI key:
+```bash
+cp .env.example .env
+# Edit .env and add your OpenAI API key
 OPENAI_API_KEY=your-api-key-here
+```
 
-### 4. Scrape data
-python scrape_catalog.py
+### 4. Import your product data
 
-### 5. Enrich catalog using GPT
+#### Option A: From Google Sheets (if publicly accessible)
+```bash
+python import_google_sheets.py
+```
+
+#### Option B: From CSV file
+```bash
+python import_csv.py your_products.csv
+```
+
+#### Option C: Use sample data for testing
+```bash
+python create_sample_data.py
+```
+
+### 5. Enrich catalog using GPT-4
+```bash
 python enrich_with_gpt.py
+```
 
 ### 6. Run the Streamlit app
+```bash
 streamlit run app.py
+```
+
+---
+
+## 📊 Using Your Google Sheets Data
+
+To use your existing Google Sheets data:
+
+1. **Make your Google Sheets publicly accessible:**
+   - Open your Google Sheets
+   - Click "Share" → "Change to anyone with the link"
+   - Set permission to "Viewer"
+
+2. **Update the .env file with your sheet details:**
+   ```
+   GOOGLE_SHEETS_ID=1G4cuYs_7qD1ft6OEhovLjj8zowQc92yYHQz2gSmLpp8
+   GOOGLE_SHEETS_GID=715689617
+   ```
+
+3. **Or export as CSV:**
+   - File → Download → Comma-separated values (.csv)
+   - Use `python import_csv.py your_file.csv`
+
+### Expected Data Format
+Your spreadsheet should have columns like:
+- `name` - Product name
+- `brand` - Brand name
+- `price` - Price (e.g., "$88")
+- `description` - Product description
+- `category` - Product category (e.g., "Leggings", "Tops")
+- `color` - Product color
+- `image_url` - Product image URL (optional)
+- `size` - Available sizes (optional)
+- `material` - Material composition (optional)
 
 ---
 
